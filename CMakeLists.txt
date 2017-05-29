@@ -1,4 +1,4 @@
-project(updevice_test C)
+project(updevice_clion_project C)
 cmake_minimum_required(VERSION 3.6)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
@@ -14,6 +14,12 @@ include_directories(UpLib/STM32Lib)
 
 add_definitions(-DSTM32F303xE)
 add_definitions(-DSTM32F10X_HD)
+
+if(${CMAKE_BUILD_TYPE} MATCHES "Debug")
+    add_definitions(-DDEBUG_ON)
+else()
+    add_definitions(-DDEBUG_OFF)
+endif()
 
 add_executable(${PROJECT_NAME}.elf ${USER_SOURCES} ${LINKER_SCRIPT})
 target_link_libraries(${PROJECT_NAME}.elf UPLIB)
