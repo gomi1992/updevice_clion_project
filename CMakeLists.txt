@@ -1,7 +1,7 @@
 project(updevice_clion_project C)
 cmake_minimum_required(VERSION 3.6)
 
-set(CMAKE_VERBOSE_MAKEFILE ON)
+#set(CMAKE_VERBOSE_MAKEFILE ON)
 
 file(GLOB_RECURSE USER_SOURCES "UP_TestAll/*.c")
 file(GLOB_RECURSE UPLIB_SOURCES "UP_TestAll/UpLib/*.c")
